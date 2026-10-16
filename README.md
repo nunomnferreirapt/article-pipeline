@@ -50,7 +50,7 @@ PASS  runs/2026-10-16-offline-first/factcheck.md
 
 ## Why this exists
 
-The pattern comes from an AI operating system that ran a company's go-to-market. Long-form pieces were produced this way, from a fixed set of sources through parallel research, a single writer and a hard fact-check gate, and independent industry platforms chose to publish them. That system is described in [ai-operated-growth-engine](https://github.com/nunomnferreirapt/ai-operated-growth-engine). This repository is a fresh, generic rebuild of that one pattern; the original stayed with the company it was built for. The sample run uses invented sources about an invented topic.
+The pattern comes from an AI operating system built for a company's go-to-market. Long-form pieces were produced this way, from a fixed set of sources through parallel research, a single writer and a hard fact-check gate, and independent industry platforms chose to publish them. That system is described in [ai-operated-growth-engine](https://github.com/nunomnferreirapt/ai-operated-growth-engine). This repository is a fresh, generic rebuild of that one pattern; the original stayed with the company it was built for. The sample run uses invented sources about an invented topic.
 
 ## Requirements
 
