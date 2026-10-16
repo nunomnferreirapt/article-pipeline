@@ -50,7 +50,7 @@ PASS  runs/2026-10-16-offline-first/factcheck.md
 
 ## Why this exists
 
-The pattern comes from an AI operating system built for a company's go-to-market. Long-form pieces were produced this way, from a fixed set of sources through parallel research, a single writer and a hard fact-check gate, and independent industry platforms chose to publish them. That system is described in [ai-operated-growth-engine](https://github.com/nunomnferreirapt/ai-operated-growth-engine). This repository is a fresh, generic rebuild of that one pattern; the original stayed with the company it was built for. The sample run uses invented sources about an invented topic.
+The original produced the long-form pieces that independent industry platforms chose to publish: a fixed set of sources, research in parallel, one writer, a verification pass before anything went out. I rebuilt the pattern here in October 2026, fresh and generic, and made the gate a plain script. The sample run uses invented sources about an invented topic. The system it came from is described in [ai-operated-growth-engine](https://github.com/nunomnferreirapt/ai-operated-growth-engine).
 
 ## Requirements
 
