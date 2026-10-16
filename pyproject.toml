@@ -1,0 +1,26 @@
+[project]
+name = "article-pipeline"
+version = "0.1.0"
+description = "Long-form articles from verified sources: parallel research, one writer, a fact-check gate, nothing published without a person."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Nuno Ferreira" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+article-pipeline = "article_pipeline.cli:main"
+
+[project.urls]
+Repository = "https://github.com/nunomnferreirapt/article-pipeline"
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.12"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
