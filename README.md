@@ -66,6 +66,8 @@ uv sync
 cp -R skill ~/.claude/skills/article-pipeline
 ```
 
+The skill calls the `article-pipeline` command. If the clone's environment is not on your PATH, open `~/.claude/skills/article-pipeline/SKILL.md` and put the clone path into its "Before you start" line (`uv run --project <path-to-clone> article-pipeline`). `skill/README.md` has the two options.
+
 See `skill/README.md` for the two ways to make the CLI visible to Claude Code.
 
 ## Usage
