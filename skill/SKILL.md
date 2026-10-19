@@ -18,6 +18,8 @@ You work inside one run folder and never outside it.
   paths below are relative to it.
 - Allowed sources are the rows of `sources.md` and nothing else. No web search,
   no memory, no general knowledge enters the draft as a factual claim.
+- If the user keeps a platform-profile folder, offer its `sources/*.md` files
+  as the sources: they are clean, dated copies of what the company published.
 - Keep a task list with the six steps below and tick them as you go.
 
 ## Step 1: brief

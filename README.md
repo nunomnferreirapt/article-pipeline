@@ -96,6 +96,8 @@ CLI:
 - `article-pipeline check <run-dir>` runs the gate, writes `factcheck.md`, exits 1 on FAIL.
 - `article-pipeline status <run-dir>` lists which stages exist.
 
+**With platform-profile.** If you keep a [platform-profile](https://github.com/nunomnferreirapt/platform-profile) of the company, its `sources/*.md` files are the sources to pass here: `--source <profile>/sources/pricing.md`. The pages are already clean markdown with the URL and fetch time on top, so the gate can check every quote against them. That is how the original ran: the writer drew only on the crawled, versioned copy of what the company had published.
+
 ## How the gate works
 
 The gate is plain Python: no model call, no network. It reads `draft.md` sentence by sentence, skipping headings. Any `[S#]` missing from `sources.md` is a problem. Any sentence with a digit, or with a capitalized word that is not its first word, needs a citation, so figures, years, percentages and names cannot slip in unsourced. Then it looks for each quote in `claims.md`, lowercased with whitespace collapsed, inside its local source file; remote sources are skipped and counted. The skill fixes and reruns until PASS and never hands over a FAIL.
