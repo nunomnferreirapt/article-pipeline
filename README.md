@@ -48,6 +48,8 @@ PASS  runs/2026-10-16-offline-first/factcheck.md
 5. Gate: `article-pipeline check` verifies citations, uncited facts and quotes, and writes `factcheck.md` with PASS or FAIL.
 6. Proposal: `draft.md` and `factcheck.md` wait in the run folder for a person. Nothing is published.
 
+**Constraints:** the gate is plain Python, no model call, no network, exit 1 on FAIL. The research and writing steps run as Claude Code subagents from the skill.
+
 ## Why this exists
 
 The original produced the long-form pieces that independent industry platforms chose to publish: a fixed set of sources, research in parallel, one writer, a verification pass before anything went out. I rebuilt the pattern here in October 2026, fresh and generic, and made the gate a plain script. The sample run uses invented sources about an invented topic. The system it came from is described in [ai-operated-growth-engine](https://github.com/nunomnferreirapt/ai-operated-growth-engine).
@@ -66,9 +68,9 @@ uv sync
 cp -R skill ~/.claude/skills/article-pipeline
 ```
 
-The skill calls the `article-pipeline` command. If the clone's environment is not on your PATH, open `~/.claude/skills/article-pipeline/SKILL.md` and put the clone path into its "Before you start" line (`uv run --project <path-to-clone> article-pipeline`). `skill/README.md` has the two options.
+First run, on the sample: `uv run article-pipeline check examples/sample-run`.
 
-See `skill/README.md` for the two ways to make the CLI visible to Claude Code.
+The skill calls the `article-pipeline` command. If the clone's environment is not on your PATH, open `~/.claude/skills/article-pipeline/SKILL.md` and put the clone path into its "Before you start" line (`uv run --project <path-to-clone> article-pipeline`). `skill/README.md` has the two options.
 
 ## Usage
 
@@ -79,8 +81,6 @@ CLI:
 - `article-pipeline new <slug> --topic "..." --source <url-or-path> [--source ...]` creates the run folder with `brief.md`, `sources.md` and copies of local sources.
 - `article-pipeline check <run-dir>` runs the gate, writes `factcheck.md`, exits 1 on FAIL.
 - `article-pipeline status <run-dir>` lists which stages exist.
-
-Try it: `uv run article-pipeline check examples/sample-run`.
 
 ## How the gate works
 
