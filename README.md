@@ -41,6 +41,20 @@ PASS  runs/2026-10-16-offline-first/factcheck.md
 
 ## What it does
 
+```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 600, "nodeSpacing": 30, "rankSpacing": 32}}}%%
+flowchart TB
+    B["Brief: topic, audience, angle, voice, the only sources allowed"]:::sys
+    B --> R["`**Claude agents**, three in parallel, one angle each: claims with verbatim quotes`"]:::sys
+    R --> M["Merge: duplicates out, the rest becomes the claims list"]:::sys
+    M --> W["`**Claude agent**, one writer: drafts from the claims list alone, a citation per sentence`"]:::sys
+    W --> G["Gate, plain Python: citations exist, facts cited, quotes found in the sources"]:::sys
+    G -- "FAIL: fix and rerun" --> W
+    G -- "PASS" --> P(["Proposal: the draft and its report wait for a person. Nothing is published"]):::human
+    classDef sys fill:#1f3a5f,stroke:#7aa2d8,color:#ffffff
+    classDef human fill:#6b4514,stroke:#e0a95a,color:#ffffff
+```
+
 1. Brief: `brief.md` holds topic, audience, angle, voice and the only sources allowed.
 2. Research: three Claude Code subagents run in parallel, one angle each, and list claims with verbatim quotes and source ids.
 3. Merge: duplicates go, the rest becomes `claims.md`.
@@ -52,7 +66,7 @@ PASS  runs/2026-10-16-offline-first/factcheck.md
 
 ## Why this exists
 
-The original produced the long-form pieces that independent industry platforms chose to publish: a fixed set of sources, research in parallel, one writer, a verification pass before anything went out. I rebuilt the pattern here in October 2026, fresh and generic, and made the gate a plain script. The sample run uses invented sources about an invented topic. The system it came from is described in [ai-operated-growth-engine](https://github.com/nunomnferreirapt/ai-operated-growth-engine).
+The original produced the long-form pieces that independent industry platforms chose to publish: a fixed set of sources, research in parallel, one writer, a verification pass before anything went out. I rebuilt the pattern here in October 2026, fresh and generic, and made the gate a plain script. The sample run uses invented sources about an invented topic. The original is described in [Parallel research, one writer](https://github.com/nunomnferreirapt/ai-operated-growth-engine/blob/main/architecture/patterns/research-writer.md), a note in the showcase it came from.
 
 ## Requirements
 
@@ -61,7 +75,7 @@ The original produced the long-form pieces that independent industry platforms c
 
 ## Install
 
-```text
+```bash
 git clone https://github.com/nunomnferreirapt/article-pipeline.git
 cd article-pipeline
 uv sync
