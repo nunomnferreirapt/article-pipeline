@@ -66,7 +66,7 @@ flowchart TB
 
 ## Why this exists
 
-The original produced the long-form pieces that independent industry platforms chose to publish: a fixed set of sources, research in parallel, one writer, a verification pass before anything went out. I rebuilt the pattern here in October 2026, fresh and generic, and made the gate a plain script. The sample run uses invented sources about an invented topic. The original is described in [Parallel research, one writer](https://github.com/nunomnferreirapt/ai-operated-growth-engine/blob/main/architecture/patterns/research-writer.md), a note in the showcase it came from.
+The original produced the long-form pieces placed on independent industry platforms: a fixed set of sources, research in parallel, one writer, a verification pass before anything went out. I rebuilt the pattern here in October 2026, fresh and generic, and made the gate a plain script. The sample run uses invented sources about an invented topic. The original is described in [Parallel research, one writer](https://github.com/nunomnferreirapt/ai-operated-growth-engine/blob/main/architecture/patterns/research-writer.md), a note in the showcase it came from.
 
 ## Requirements
 
