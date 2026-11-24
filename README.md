@@ -55,6 +55,8 @@ flowchart TB
     classDef human fill:#6b4514,stroke:#e0a95a,color:#ffffff
 ```
 
+<img src="assets/diagram-key.svg" alt="Key: rounded amber, a person decides or acts; navy, a step a system runs; Claude in bold, a step Claude runs; green, what comes out">
+
 1. Brief: `brief.md` holds topic, audience, angle, voice and the only sources allowed.
 2. Research: three Claude Code subagents run in parallel, one angle each, and list claims with verbatim quotes and source ids.
 3. Merge: duplicates go, the rest becomes `claims.md`.
